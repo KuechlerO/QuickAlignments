@@ -1,7 +1,7 @@
 # Expects under input/fastq_files {sample}.fastq files & 
 # under input/bam_files {sample}.bam files:
 input_samples:
-  ["19_5325_1", "19_5325_2", "19_5325_3"]
+  ["19-5325_1", "19-5325_2", "19-5325_3"]
 
 reference_genome:
   "input/Homo_sapiens.GRCh37.dna.chromosome.2.fa"
