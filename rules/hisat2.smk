@@ -1,10 +1,10 @@
 rule hisat2_index:
     input:
-        fasta="Homo_sapiens.GRCh37.dna.chromosome.2.fa"
+        fasta=config["reference_genome"],
     output:
-        directory("hisat2_index_hg19_chr2"),
+        directory("output/hisat2/hisat2_index"),
     params:
-        prefix="hisat2_index_hg19_chr2/ref"
+        prefix="output/hisat2/hisat2_index/ref"
     log:
         "logs/hisat2_index.log"
     threads: 2
@@ -14,8 +14,9 @@ rule hisat2_index:
  
 rule hisat2_align:
     input:
-        reads=["{sample}_1.fastq.gz_filtered.fastq", "{sample}_2.fastq.gz_filtered.fastq"],
-        idx="hisat2_index_hg19_chr2/",
+        reads=["output/filtering/{sample}/extracted_reads/{sample}_1.{region}.fastq",
+         "output/filtering/{sample}/extracted_reads/{sample}_2.{region}.fastq"],
+        idx="output/hisat2/hisat2_index/",
     output:
         "output/hisat2/mapped/{sample}.bam",
     log:
