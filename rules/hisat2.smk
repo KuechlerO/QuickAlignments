@@ -18,9 +18,9 @@ rule hisat2_align:
          "output/filtering/{sample}/extracted_reads/{sample}_2.{region}.fastq"],
         idx="output/hisat2/hisat2_index/",
     output:
-        "output/hisat2/mapped/{sample}.bam",
+        "output/hisat2/mapped/{sample}.{region}.bam",
     log:
-        "logs/hisat2_align_{sample}.log",
+        "logs/hisat2_align_{sample}.{region}.log",
     params:
         extra="",
     threads: 2
