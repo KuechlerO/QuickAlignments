@@ -11,7 +11,7 @@ rule filter_reads_from_bam_file:
     conda:
         "../envs/all.yaml",
     script:
-        "scripts/filter_reads_from_bam_file.py" 
+        "../scripts/filter_reads_from_bam_file.py" 
 
 
 rule extract_reads_from_fastq_file:
@@ -25,6 +25,6 @@ rule extract_reads_from_fastq_file:
     conda:
         "../envs/all.yaml",
     shell:
-        "scripts/extract_reads_from_fastq_file.sh {input} {output}"
+        "../scripts/extract_reads_from_fastq_file.sh {input} {output}"
 
 
