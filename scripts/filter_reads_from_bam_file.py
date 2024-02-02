@@ -28,6 +28,7 @@ filtered_read_ids = []
 for read in bam_file.fetch('2', 27873676, 27886481):
     filtered_read_ids.append(read.query_name)
 print("Exporting read IDs of reads that mapped to SUPT7L")
+filtered_read_ids = list(set(filtered_read_ids))
 with open(filtered_reads_ids_gene_region_file, "w") as f:
     for read_id in filtered_read_ids:
         f.write(read_id + "\n")
@@ -90,6 +91,7 @@ for read in bam_file.fetch('2', 27883851, 27884253):
             exon3_reads_softclipped_with_motif3.append(read)
  
 # Export read IDs of clipped reads
+exon3_clipped_reads_ids = list(set(exon3_clipped_reads_ids))
 with open(exon3_clipped_reads_ids_file, "w") as f:
     for read_id in exon3_clipped_reads_ids:
         f.write(read_id + "\n")
@@ -126,6 +128,7 @@ for read in bam_file.fetch('2', 27885044, 27885150):
             exon2_reads_softclipped_with_motif3.append(read)
  
 # Export read IDs of clipped reads
+exon2_clipped_reads_ids = list(set(exon2_clipped_reads_ids))
 with open(exon2_clipped_reads_ids_file, "w") as f:
     for read_id in exon2_clipped_reads_ids:
         f.write(read_id + "\n")
