@@ -1,7 +1,7 @@
 # Filter from a BAM-file all reads of interest
 rule filter_reads_from_bam_file:
     input:
-        input_bam_file = 'input/bam_files/{sample}.bam',
+        input_bam_file = 'input/bam_files/{sample}.sorted.bam',
     output:
         text_report_file="output/filtering/{sample}/read_analysis.txt",
         filtered_reads_ids_gene_region_file="output/filtering/{sample}/reads_in_gene_region.txt",
