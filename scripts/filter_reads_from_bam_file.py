@@ -14,7 +14,6 @@ bam_file = pysam.AlignmentFile(input_filename, "rb")
 
 text_report_file = snakemake.output["text_report_file"]
 filtered_reads_ids_gene_region_file = snakemake.output["filtered_reads_ids_gene_region_file"]
-print("Filtered reads IDs file: ", filtered_reads_ids_gene_region_file)
 exon3_clipped_reads_ids_file = snakemake.output["exon3_clipped_reads_ids_file"]
 exon2_clipped_reads_ids_file = snakemake.output["exon2_clipped_reads_ids_file"]
 exon3_exon2_clipped_reads_ids_file = snakemake.output["exon3_exon2_clipped_reads_ids_file"]
@@ -91,7 +90,7 @@ for read in bam_file.fetch('2', 27883851, 27884253):
             exon3_reads_softclipped_with_motif3.append(read)
  
 # Export read IDs of clipped reads
-with open(exon3_clipped_reads_ids, "w") as f:
+with open(exon3_clipped_reads_ids_file, "w") as f:
     for read_id in exon3_clipped_reads_ids:
         f.write(read_id + "\n")
  
@@ -127,7 +126,7 @@ for read in bam_file.fetch('2', 27885044, 27885150):
             exon2_reads_softclipped_with_motif3.append(read)
  
 # Export read IDs of clipped reads
-with open(exon3_clipped_reads_ids, "w") as f:
+with open(exon3_clipped_reads_ids_file, "w") as f:
     for read_id in exon2_clipped_reads_ids:
         f.write(read_id + "\n")
  
