@@ -1,0 +1,11 @@
+name: all_env
+
+channels:
+  - conda-forge # Place conda-forge first to avoid conflicts
+  - bioconda
+  - defaults
+
+dependencies:
+  - pysam
+  - seqtk
+  - samtools
