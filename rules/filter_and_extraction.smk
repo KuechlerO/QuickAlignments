@@ -24,7 +24,7 @@ rule extract_reads_from_fastq_file:
         extracted_reads_file_read2="output/filtering/{sample}/extracted_reads/{sample}_2.{region}.fastq"
     conda:
         "../envs/all.yaml",
-    shell:
+    script:
         "../scripts/extract_reads_from_fastq.sh {input} {output}"
 
 
