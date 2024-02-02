@@ -25,6 +25,17 @@ rule extract_reads_from_fastq_file:
     conda:
         "../envs/all.yaml",
     shell:
-        "scripts/extract_reads_from_fastq.sh {input} {output}"
+        """
+        fastq_file1={input.input_fastq_file_read1}
+        fastq_file2={input.input_fastq_file_read2}
+        read_ids_file={input.reads_of_interest}
+
+        output_fastq_file1={output.extracted_reads_file_read1}
+        output_fastq_file1={output.extracted_reads_file_read2}
+        
+        # Extract reads
+        seqtk subseq $fastq_file1 $read_ids_file > $output_fastq_file1
+        seqtk subseq $fastq_file2 $read_ids_file > $output_fastq_file2
+        """
 
 
