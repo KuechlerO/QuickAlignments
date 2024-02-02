@@ -14,6 +14,7 @@ bam_file = pysam.AlignmentFile(input_filename, "rb")
 
 text_report_file = snakemake.output["text_report_file"]
 filtered_reads_ids_gene_region_file = snakemake.output["filtered_reads_ids_gene_region_file"]
+print("Filtered reads IDs file: ", filtered_reads_ids_gene_region_file)
 exon3_clipped_reads_ids_file = snakemake.output["exon3_clipped_reads_ids_file"]
 exon2_clipped_reads_ids_file = snakemake.output["exon2_clipped_reads_ids_file"]
 exon3_exon2_clipped_reads_ids_file = snakemake.output["exon3_exon2_clipped_reads_ids_file"]
