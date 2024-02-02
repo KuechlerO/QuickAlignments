@@ -25,6 +25,6 @@ rule extract_reads_from_fastq_file:
     conda:
         "../envs/all.yaml",
     shell:
-        "../scripts/extract_reads_from_fastq.sh {input} {output}"
+        "scripts/extract_reads_from_fastq.sh {input} {output}"
 
 
