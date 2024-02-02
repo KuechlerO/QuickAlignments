@@ -126,7 +126,7 @@ for read in bam_file.fetch('2', 27885044, 27885150):
             exon2_reads_softclipped_with_motif3.append(read)
  
 # Export read IDs of clipped reads
-with open(exon3_clipped_reads_ids_file, "w") as f:
+with open(exon2_clipped_reads_ids_file, "w") as f:
     for read_id in exon2_clipped_reads_ids:
         f.write(read_id + "\n")
  
