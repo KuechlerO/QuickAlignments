@@ -1,7 +1,74 @@
 # Expects under input/fastq_files {sample}.fastq files & 
 # under input/bam_files {sample}.bam files:
 input_samples:
-  ["19-5325_1", "19-5325_2", "19-5325_3"]
+  # ["19-5325_1", "19-5325_2", "19-5325_3"]
+  ["19-5325_1"]
 
 reference_genome:
   "input/Homo_sapiens.GRCh37.dna.chromosome.2.fa"
+
+reference_genome_annotation:
+  "input/Homo_sapiens.GRCh37.87.gtf"
+
+star_extra_settings: >-
+  --quantMode GeneCounts 
+  --outSAMstrandField intronMotif 
+  --outSAMtype BAM Unsorted 
+  --twopassMode Basic 
+  --chimSegmentMin 10 --chimOutType WithinBAM SoftClip 
+  --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 
+  --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 
+  --chimSegmentReadGapMax 3
+
+
+star_extra_settings2: >-
+  --quantMode GeneCounts 
+  --outSAMstrandField intronMotif 
+  --outSAMtype BAM Unsorted 
+  --twopassMode Basic 
+  --chimSegmentMin 10 --chimOutType WithinBAM SoftClip 
+  --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 
+  --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 
+  --chimSegmentReadGapMax 3
+
+star_extra_settings3: >-
+  --quantMode GeneCounts 
+  --outSAMstrandField intronMotif 
+  --outSAMtype BAM Unsorted 
+  --twopassMode Basic 
+
+star_extra_settings4: >-
+  --quantMode GeneCounts 
+  --outSAMstrandField intronMotif 
+  --outSAMtype BAM Unsorted 
+
+star_extra_settings9: >-
+  --outSAMtype BAM Unsorted
+
+star_extra_settings10: >-
+  --outSAMtype BAM Unsorted
+  --outSAMstrandField intronMotif 
+
+star_extra_settings11: >-
+  --outSAMtype BAM Unsorted
+  --outSAMstrandField intronMotif 
+  --quantMode GeneCounts
+
+star_extra_settings12: >-
+  --quantMode GeneCounts 
+  --outSAMtype BAM Unsorted 
+  --twopassMode Basic 
+  --chimSegmentMin 10 --chimOutType WithinBAM SoftClip 
+  --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 
+  --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 
+  --chimSegmentReadGapMax 3
+
+
+star_extra_settings13: >-
+  --quantMode GeneCounts  
+  --outSAMtype BAM Unsorted 
+  --twopassMode Basic 
+  --chimSegmentMin 10 --chimOutType WithinBAM SoftClip 
+  --chimJunctionOverhangMin 10 --chimScoreMin 1 --chimScoreDropMax 30 
+  --chimScoreJunctionNonGTAG 0 --chimScoreSeparation 1 --alignSJstitchMismatchNmax 5 -1 5 5 
+  --chimSegmentReadGapMax 3

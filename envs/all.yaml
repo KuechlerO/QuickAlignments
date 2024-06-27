@@ -9,3 +9,5 @@ dependencies:
   - pysam
   - seqtk
   - samtools
+  - numpy
+  - pandas
